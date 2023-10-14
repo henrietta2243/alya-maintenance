@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+body {
+    background-image: url(img/87.jpg);
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.warning {
+    position: absolute;
+    display: block;
+    height: 150px;
+    top: 11vh;
+    left: 30%;
+}
+
+.welcome {
+    position: absolute;
+    display: block;
+    top: 30vh;
+    left: 10%;
+    color: azure;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.site {
+    position: absolute;
+    display: block;
+    top: 38vh;
+    font-size: 4vw;
+    color: #c81109;
+}
+
+.wait {
+    position: relative;
+    top: 49vh;
+    padding-left: 10vw;
+    color: aliceblue;
+    font-weight: 700;
+    animation: animateText 5s ease-in-out infinite;
+}
+
+.loader {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48vh;
+}
+
+.spiner {
+    top: 1px;
+    left: 10px;
+    width: 48px;
+    height:48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #fff #fff transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.spiner::after, .spiner::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: #4000ff #4000ff transparent transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing:border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+
+.spiner::before {
+    width: 32px;
+    height: 32px;
+    border-color: #fff #fff transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg)
+    }
+}
+
+@keyframes animateText {
+    0% {
+        opacity: 0;
+    }
+    40%, 70% {
+        opacity: 1;
+    }
+    90%, 100% {
+        opacity: 0;
+    }
+}
+
+.footer {
+    margin-top: 38vh;
+    margin-left: 45vw;
+    position: absolute;
+    cursor: pointer;
+}
+
+.whatsapp {
+    width: 32px;
+    transition: opacity 0.15s;
+}
+
+.whatsapp:hover {
+    opacity: 0.7;
+}
+
+.whatsapp:active {
+    filter: drop-shadow( 0 0 0.75rem rgb(221, 237, 3))
+}
+
+.instagram {
+    width: 32px;
+    transition: opacity 0.15s;
+}
+
+.instagram:hover {
+    opacity: 0.7;
+}
+
+.instagram:active {
+    filter: drop-shadow(0 0 0.75rem rgb(75, 20, 240))
+}
