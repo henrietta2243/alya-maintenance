@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url(img/87.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.container {
+    display: grid;
+    top: 11vh;
+    position: absolute;
+    vertical-align: middle;
+}
+
+.warning-img {
+    max-width: 12vw;
+    padding-left: 20vw;
+}
+
+.site {
+    font-size: 4vw;
+    font-weight: bold;
+    color: #c81109;
+}
+
+.wait {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+}
+
+.text {
+    display: inline-block;
+    color: aliceblue;
+    font-size: 2vw;
+    font-weight: 700;
+    padding-left: 10vw;
+    padding-right: 10px;
+    animation: animateText 5s ease-in-out infinite;
+}
+
+.loader {
+    justify-content: center;
+    align-items: center;
+}
+
+.spiner {
+    top: 1px;
+    left: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #fff #fff transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.spiner::after, .spiner::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: #4000ff #4000ff transparent transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+
+.spiner::before {
+    width: 32px;
+    height: 32px;
+    border-color: #fff #fff transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes animateText {
+    0% {
+        opacity: 0;
+    }
+    40%, 70% {
+        opacity: 1;
+    }
+    90%, 100% {
+        opacity: 0;
+    }
+}
